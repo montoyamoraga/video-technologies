@@ -46,15 +46,13 @@
 
 boolean showHelpText = false;
 
-
 //int scanLines = 525;
-int scanLines = 10;
+int scanLines = 100;
 
 int currentScanLine = 0;
 
 float lineSizeX = 0;
 float lineSizeY = 0;
-
 
 // canvas size is 768 px x 768 px
 // 768 is 512 + 256
@@ -66,12 +64,11 @@ void setup() {
   
   background(0, 0, 0);
   
-  frameRate(1);
+  frameRate(30);
   
+  // calculate the 
   lineSizeX = width;
-  lineSizeY = height / scanLines;
-  
-  println(lineSizeY);
+  lineSizeY = float(height) / scanLines;
   
   strokeWeight(lineSizeY);
   
@@ -97,6 +94,15 @@ void draw() {
     currentScanLine = 1 - currentScanLine;
   }
   
+  displayHelpText();
+  
+}
+
+void displayHelpText() {
+  if (showHelpText) {
+    textSize(32);
+    text("frameRate:", width/2, height/2);
+  }
 }
 
 
