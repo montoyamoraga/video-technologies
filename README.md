@@ -1,1 +1,1 @@
-# video-technology-studies
+# video-technologies
